@@ -71,8 +71,11 @@
 
 </style>
 </head>
-
-<body  >
+<div class="wrapper-counter-view">
+    <div id="visits">...</div>
+</div>
+	
+<body>
 
 <div class="container text-center">
 <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="4000" id="myCarousel">
@@ -149,6 +152,11 @@ jQuery(document).ready(function() {
         
 });
 </script>
-        
+<script>
+	function countView(response) {
+		document.getElementById('visits').innerText = `${response.value} views`
+	}
+</script>
+<script async src="https://api.countapi.xyz/hit/nguyentamluadao.site/visits?callback=countView"></script>  
 </body>
 </html>
